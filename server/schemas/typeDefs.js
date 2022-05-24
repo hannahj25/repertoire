@@ -10,6 +10,7 @@ const typeDefs = gql`
  }
 
  type Item {
+    _id: ID
     title: String!
     composer: String!
     genre: String!
@@ -44,7 +45,7 @@ const typeDefs = gql`
 
     removeItem(itemId: ID!): Item
 
-    updateItem(title: String, composer: String, genre: String, status: String, deadline: String, notes: String): Item
+    updateItem(itemId: ID!, title: String, composer: String, genre: String, status: String, deadline: String, notes: String): Item
     
 
 
