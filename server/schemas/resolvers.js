@@ -1,4 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
+const { Item } = require('../models');
 const User = require('../models/User');
 const { signToken } = require('../utils/auth');
 
@@ -9,8 +10,19 @@ const resolvers = {
         return User.find();
       },
   
-      user: async (parent, { userId }) => {
+      user: async (parent, { userId }, context) => {
+          if (!context.user) {
+              throw new AuthenticationError('User not logged in.')
+          }
         return User.findOne({ _id: userId });
+      },
+
+      getItems: async (parent, {}, context) => {
+        if (!context.user) {
+            throw new AuthenticationError('User not logged in.')
+        }
+        return User.findById(context.user._id).populate("items")
+        .then((user) => user.items);
       },
     },
   

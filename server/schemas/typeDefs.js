@@ -14,7 +14,7 @@ const typeDefs = gql`
     composer: String!
     genre: String!
     status: String
-    deadline: Date
+    deadline: String
     notes: String
  }
 
@@ -40,11 +40,11 @@ const typeDefs = gql`
 
     removeUser(userId: ID!): User
 
-    addItem(title: String!, composer: String!, genre: String!, status: String, deadline: Date, notes: String): Item
+    addItem(title: String!, composer: String!, genre: String!, status: String, deadline: String, notes: String): Item
 
     removeItem(itemId: ID!): Item
 
-    updateItem(title: String, composer: String, genre: String, status: String, deadline: Date, notes: String): Item
+    updateItem(title: String, composer: String, genre: String, status: String, deadline: String, notes: String): Item
     
 
 
