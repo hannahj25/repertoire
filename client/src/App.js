@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //import pages and components
 import CreateAccount from './pages/CreateAccount';
 import ButtonAppBar from './components/Header/ButtonAppBar.js';
+import Login from './pages/Login';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -40,6 +41,11 @@ function App() {
           <ButtonAppBar />
           <div className="container">
             <Routes>
+
+            <Route 
+                path="/login" 
+                element={<Login />} 
+              />
             
               <Route 
                 path="/create-account" 

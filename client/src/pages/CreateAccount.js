@@ -44,7 +44,7 @@ const CreateAccount = () => {
       <main >
        
          <div >
-       <h4 style={{textAlign: 'center'}}>Create your account to get started!</h4>
+       
                 <Box
                 component="form"
                 sx={{
@@ -52,12 +52,13 @@ const CreateAccount = () => {
                 }}
                 noValidate
                 autoComplete="off" 
-                style={{display: 'flex', justifyContent: 'center'}}
+                style={{display: 'flex', justifyContent: 'center', }}
                 
                 
               >
                 
-                <form style={{textAlign: 'center'}} onSubmit={handleFormSubmit}>
+                <form style={{textAlign: 'center', backgroundColor: '#FBF7F7', padding: '40px'}} onSubmit={handleFormSubmit}>
+                <h4 style={{textAlign: 'center'}}>Create an account to get started!</h4>
                  <TextField 
                   id="outlined-basic" 
                   label="Username" 
@@ -67,6 +68,7 @@ const CreateAccount = () => {
                   value={formState.username}
                   onChange={handleChange}
                   variant="outlined" 
+                  style={{marginBottom: '10px'}}
                   />
                     <TextField 
                   id="outlined-basic" 
@@ -77,6 +79,7 @@ const CreateAccount = () => {
                   value={formState.email}
                   onChange={handleChange}
                   variant="outlined" 
+                  style={{marginBottom: '10px'}}
                   />
                   <TextField 
                   id="outlined-basic" 
@@ -87,9 +90,10 @@ const CreateAccount = () => {
                   value={formState.password}
                   onChange={handleChange}
                   variant="outlined" 
+                  style={{marginBottom: '10px'}}
                   />
                   
-                  <Button style={{marginTop: '20px'}}type="submit" variant="contained">Create Account</Button>
+                  <Button style={{marginTop: '20px', backgroundColor: '#3581B8'}}type="submit" variant="contained">Create Account</Button>
                 </form>
                 </Box>
                 </div>   
