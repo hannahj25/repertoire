@@ -1,13 +1,15 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import HomeIcon from '@mui/icons-material/Home';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
-import LoginIcon from '@mui/icons-material/Login';
+
 
 export default function ButtonAppBar() {
   return (
@@ -18,20 +20,21 @@ export default function ButtonAppBar() {
             Repertoire
           </Typography>
           <MenuItem>
-            <IconButton size="large" color="inherit">
+            <IconButton component={Link} to="/" size="large" color="inherit">
                 <HomeIcon />
             </IconButton>
           </MenuItem>
           <MenuItem>
-            <IconButton size="large" color="inherit">
+            <IconButton component={Link} to="/my-repertoire" size="large" color="inherit">
                 <LibraryMusicIcon />
             </IconButton>
           </MenuItem>
-          <MenuItem>
-            <IconButton size="large" color="inherit">
-                <LoginIcon />
-            </IconButton>
-          </MenuItem>
+          
+          <Button component={Link} to="/login" color="inherit">Login</Button>
+          
+    
+          <Button component={Link} to="/create-account" color="inherit">Create Account</Button>
+          
         </Toolbar>
       </AppBar>
     </Box>

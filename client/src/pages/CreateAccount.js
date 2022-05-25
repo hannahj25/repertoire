@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
-const Signup = () => {
+const CreateAccount = () => {
     const [formState, setFormState] = useState({
       username: '',
       email: '',
@@ -42,18 +41,23 @@ const Signup = () => {
     };
   
     return (
-      <main className="flex-row justify-center mb-4">
-        <div className="col-12 col-lg-10">
-          <div className="card">
-            <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-            <div className="card-body">
-              {data ? (
-                <p>
-                  Success! You may now head{' '}
-                  <Link to="/">back to the homepage.</Link>
-                </p>
-              ) : (
-                <form onSubmit={handleFormSubmit}>
+      <main >
+       
+         <div >
+       <h4 style={{textAlign: 'center'}}>Create your account to get started!</h4>
+                <Box
+                component="form"
+                sx={{
+                  '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off" 
+                style={{display: 'flex', justifyContent: 'center'}}
+                
+                
+              >
+                
+                <form style={{textAlign: 'center'}} onSubmit={handleFormSubmit}>
                  <TextField 
                   id="outlined-basic" 
                   label="Username" 
@@ -63,14 +67,6 @@ const Signup = () => {
                   value={formState.username}
                   onChange={handleChange}
                   variant="outlined" 
-                  />
-                  <input
-                    className="form-input"
-                    placeholder="Your email"
-                    name="email"
-                    type="email"
-                    value={formState.email}
-                    onChange={handleChange}
                   />
                     <TextField 
                   id="outlined-basic" 
@@ -92,26 +88,22 @@ const Signup = () => {
                   onChange={handleChange}
                   variant="outlined" 
                   />
-                  <button
-                    className="btn btn-block btn-info"
-                    style={{ cursor: 'pointer' }}
-                    type="submit"
-                  >
-                    Submit
-                  </button>
+                  
+                  <Button style={{marginTop: '20px'}}type="submit" variant="contained">Create Account</Button>
                 </form>
-              )}
+                </Box>
+                </div>   
+            
   
               {error && (
                 <div className="my-3 p-3 bg-danger text-white">
                   {error.message}
                 </div>
               )}
-            </div>
-          </div>
-        </div>
+            
+          
       </main>
     );
   };
 
-  export default Signup;
+  export default CreateAccount;
