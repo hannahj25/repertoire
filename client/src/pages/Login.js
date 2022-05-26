@@ -46,11 +46,10 @@ const Login = (props) => {
   
     return (
       <main >
-       
          <div>
-       
+         
                 <Box
-                component="form"
+                component="div"
                 sx={{
                   '& > :not(style)': { m: 1, width: '25ch' },
                 }}
@@ -61,7 +60,8 @@ const Login = (props) => {
                 
               >
                 
-                <form style={{textAlign: 'center', backgroundColor: '#FBF7F7', padding: '40px'}} onSubmit={handleFormSubmit}>
+                
+                <form style={{textAlign: 'center', backgroundColor: '#FBF7F7', padding: '40px'}} >
                 <h4 style={{textAlign: 'center'}}>Login</h4>
                     <TextField 
                   id="outlined-basic" 
@@ -86,17 +86,21 @@ const Login = (props) => {
                   style={{marginBottom: '10px'}}
                   />
                   
-                  <Button style={{marginTop: '20px', backgroundColor: '#3581B8'}}type="submit" variant="contained">Login</Button>
+                  <Button style={{marginTop: '20px', backgroundColor: '#3581B8'}}type="button" onClick={handleFormSubmit} variant="contained">Login</Button>
                 </form>
+                
+                {error && (
+               <div className="my-3 p-3 bg-danger text-white">
+                 {error.message}
+               </div>
+             )}
+                
                 </Box>
+                
                 </div>   
             
   
-              {error && (
-                <div className="my-3 p-3 bg-danger text-white">
-                  {error.message}
-                </div>
-              )}
+             
             
           
       </main>

@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import {
   ApolloClient,
@@ -10,8 +11,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //import pages and components
 import CreateAccount from './pages/CreateAccount';
-import ButtonAppBar from './components/Header/ButtonAppBar.js';
 import Login from './pages/Login';
+import MyRepertoire from './pages/MyRepertoire'
+import ButtonAppBar from './components/Header/ButtonAppBar.js';
+
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -41,6 +45,11 @@ function App() {
           <ButtonAppBar />
           <div className="container">
             <Routes>
+
+            <Route 
+                path="/my-repertoire" 
+                element={<MyRepertoire />} 
+              />
 
             <Route 
                 path="/login" 

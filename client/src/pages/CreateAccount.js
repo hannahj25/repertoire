@@ -46,7 +46,7 @@ const CreateAccount = () => {
          <div >
        
                 <Box
-                component="form"
+                component="div"
                 sx={{
                   '& > :not(style)': { m: 1, width: '25ch' },
                 }}
@@ -57,7 +57,7 @@ const CreateAccount = () => {
                 
               >
                 
-                <form style={{textAlign: 'center', backgroundColor: '#FBF7F7', padding: '40px'}} onSubmit={handleFormSubmit}>
+                <form style={{textAlign: 'center', backgroundColor: '#FBF7F7', padding: '40px'}}>
                 <h4 style={{textAlign: 'center'}}>Create an account to get started!</h4>
                  <TextField 
                   id="outlined-basic" 
@@ -93,7 +93,7 @@ const CreateAccount = () => {
                   style={{marginBottom: '10px'}}
                   />
                   
-                  <Button style={{marginTop: '20px', backgroundColor: '#3581B8'}}type="submit" variant="contained">Create Account</Button>
+                  <Button style={{marginTop: '20px', backgroundColor: '#3581B8'}}type="button" onClick={handleFormSubmit}variant="contained">Create Account</Button>
                 </form>
                 </Box>
                 </div>   
