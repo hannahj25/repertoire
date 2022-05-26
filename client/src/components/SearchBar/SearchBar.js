@@ -5,8 +5,7 @@ import Button from '@mui/material/Button';
 function SearchBar(props) {
     return (
       <form>
-        <div className="form-group">
-          <label htmlFor="search">Search:</label>
+        
           <TextField 
                   id="outlined-basic" 
                   label="Search classical works" 
@@ -14,13 +13,11 @@ function SearchBar(props) {
                   value={props.value}
                   onChange={props.handleInputChange}
                   variant="outlined" 
-                  style={{marginBottom: '10px'}}
                   />
-          <br />
-          <Button style={{marginTop: '20px', backgroundColor: '#3581B8'}}type="submit" variant="contained" onClick={props.handleFormSubmit}>Login</Button>
-            Search
-          <Button/>
-        </div>
+                  <br/>
+          <Button style={{marginTop: '20px', backgroundColor: '#3581B8'}}type="button"  variant="contained" onClick={props.handleFormSubmit}>Search</Button>
+  
+
       </form>
     );
   }

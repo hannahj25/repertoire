@@ -6,7 +6,7 @@ import Item from '../Item/Item';
 
 export default function Dashboard() {
     return (
-        <Grid  style={{backgroundColor: '#3581B8', paddingBottom: '70px', width: '80%',
+        <Grid  style={{backgroundColor: '#3581B8', borderRadius: 10, paddingBottom: '70px', width: '80%',
         marginLeft: 'auto',
         marginRight: 'auto'}}justifyContent="center" alignItems="center" container spacing={6}>
             <Grid item>
