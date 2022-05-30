@@ -11,7 +11,8 @@ export default function Dashboard() {
         marginRight: 'auto'}}justifyContent="center" alignItems="center" container spacing={6}>
             <Grid item>
             <h3 style={{color:'#000000', textAlign: 'center'}}>To Learn</h3>
-                <Column></Column>
+                <Column>
+                </Column>
             </Grid>
             <Grid item>
             <h3 style={{color:'#000000', textAlign: 'center'}}>Learning</h3>

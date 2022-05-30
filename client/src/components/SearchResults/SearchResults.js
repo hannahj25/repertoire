@@ -14,6 +14,8 @@ const SearchResults = () => {
 
     function onSelect(selectedWork){
         console.log('selected work:', selectedWork)
+        setWorkSelected(selectedWork);
+    
     }
     
 
@@ -25,15 +27,7 @@ const SearchResults = () => {
                 />
             </Grid>
             <Grid item container>
-                {/* {result.map((el) => {
-                    return (
-                        <Typography >{el.work?.title}</Typography>
-                    )
-                })} */}
-                {/* List results??? work title + composer name
-                    + make results clickable to view further details??
                 
-                */}
 
 
             </Grid>
