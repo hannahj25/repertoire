@@ -22,29 +22,41 @@ export default function ButtonAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{backgroundColor: '#3581B8'}}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
             Repertoire
           </Typography>
           <MenuItem>
             <IconButton component={Link} to="/" size="large" color="inherit">
-                <HomeIcon />
+                <HomeIcon style={{color: '#FFE5D9'}} />
             </IconButton>
           </MenuItem>
+          {Auth.loggedIn() ? (
           <MenuItem>
+          
             <IconButton component={Link} to="/my-repertoire" size="large" color="inherit">
-                <LibraryMusicIcon />
+                <LibraryMusicIcon style={{color: '#FFE5D9'}} />
             </IconButton>
           </MenuItem>
+          ) : (
+            <></>
+          )}
           
           {Auth.loggedIn() ? (
-            <Button component={Link} to="/" color="inherit"
-            onClick={logout}>Logout</Button>
+            <MenuItem>
+            <Button component={Link} to="/" style={{color: '#FFE5D9'}}
+            onClick={logout} size="large" >Logout</Button>
+            </MenuItem>
           ) : (
             <>
+            <MenuItem>
 
-          <Button component={Link} to="/login" color="inherit">Login</Button>
+          <Button component={Link} to="/login" style={{color: '#FFE5D9'}} size="large" >Login</Button>
+          </MenuItem>
+
+          <MenuItem>
     
-          <Button component={Link} to="/create-account" color="inherit">Create Account</Button>
+          <Button component={Link} to="/create-account" style={{color: '#FFE5D9'}} size="large" >Create Account</Button>
+          </MenuItem>
           </>
           )}
         </Toolbar>

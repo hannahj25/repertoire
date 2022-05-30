@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import TextField from '@mui/material/TextField';
@@ -46,7 +47,7 @@ const Login = (props) => {
   
     return (
       <main >
-         <div>
+         <div style={{display: 'flex', justifyContent: 'center'}}>
          
                 <Box
                 component="div"
@@ -55,14 +56,14 @@ const Login = (props) => {
                 }}
                 noValidate
                 autoComplete="off" 
-                style={{display: 'flex', justifyContent: 'center'}}
+                style={{display: 'flex', justifyContent: 'center', marginTop: '150px', backgroundColor: '#3581B8', width: '30%', borderRadius: '10px', paddingTop: '50px', paddingBottom: '50px'}}
                 
                 
               >
                 
                 
-                <form style={{textAlign: 'center', backgroundColor: '#FBF7F7', padding: '40px'}} >
-                <h4 style={{textAlign: 'center'}}>Login</h4>
+                <form style={{textAlign: 'center', backgroundColor: '#FFE5D9', borderRadius: '10px', padding: '60px'}} >
+                <h4 style={{textAlign: 'center'}}>Login or <Link to="/create-account">create account</Link></h4>
                     <TextField 
                   id="outlined-basic" 
                   label="Email" 

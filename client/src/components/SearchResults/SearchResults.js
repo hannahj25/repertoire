@@ -6,38 +6,30 @@ import SearchBar from '../SearchBar/SearchBar';
 import Typography from '@mui/material/Typography';
 
 const SearchResults = () => {
-    const [result, setResult] = useState([]);
-    const [search, setSearch] = useState('');
 
-    const searchMusic = (query) =>
-    searchAPI(query)
-    .then((res) => setResult(res.data.results))
-    .catch((err) => console.log(err));
+    
 
-    const handleInputChange = (e) => setSearch(e.target.value);
+    const [workSelected, setWorkSelected] = useState({});
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-        searchMusic(search);
-    };
 
+    function onSelect(selectedWork){
+        console.log('selected work:', selectedWork)
+    }
     
 
     return (
         <Grid>
             <Grid item>
                 <SearchBar
-                value={search}
-                handleInputChange={handleInputChange}
-                handleFormSubmit={handleFormSubmit}
+                    onSelect={onSelect}
                 />
             </Grid>
             <Grid item container>
-                {result.map((el) => {
+                {/* {result.map((el) => {
                     return (
-                        <Typography >{el.composer.complete_name}</Typography>
+                        <Typography >{el.work?.title}</Typography>
                     )
-                })}
+                })} */}
                 {/* List results??? work title + composer name
                     + make results clickable to view further details??
                 

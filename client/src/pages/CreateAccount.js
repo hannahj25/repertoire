@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -43,7 +44,7 @@ const CreateAccount = () => {
     return (
       <main >
        
-         <div >
+         <div style={{display: 'flex', justifyContent: 'center'}} >
        
                 <Box
                 component="div"
@@ -52,13 +53,13 @@ const CreateAccount = () => {
                 }}
                 noValidate
                 autoComplete="off" 
-                style={{display: 'flex', justifyContent: 'center', }}
+                style={{display: 'flex', justifyContent: 'center', marginTop: '150px', backgroundColor: '#3581B8', width: '30%', borderRadius: '10px', paddingTop: '50px', paddingBottom: '50px' }}
                 
                 
               >
                 
-                <form style={{textAlign: 'center', backgroundColor: '#FBF7F7', padding: '40px'}}>
-                <h4 style={{textAlign: 'center'}}>Create an account to get started!</h4>
+                <form style={{textAlign: 'center', backgroundColor: '#FFE5D9', borderRadius: '10px', padding: '60px'}}>
+                <h4 style={{textAlign: 'center'}}>Create an account to get started! Or <Link to='/login'>login</Link></h4>
                  <TextField 
                   id="outlined-basic" 
                   label="Username" 

@@ -10,10 +10,13 @@ import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //import pages and components
+import Home from './pages/Home';
 import CreateAccount from './pages/CreateAccount';
 import Login from './pages/Login';
 import MyRepertoire from './pages/MyRepertoire'
 import ButtonAppBar from './components/Header/ButtonAppBar.js';
+
+
 
 
 
@@ -45,6 +48,11 @@ function App() {
           <ButtonAppBar />
           <div className="container">
             <Routes>
+
+            <Route 
+                path="/" 
+                element={<Home />} 
+              />
 
             <Route 
                 path="/my-repertoire" 
