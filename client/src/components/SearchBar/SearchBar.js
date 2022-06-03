@@ -65,7 +65,7 @@ function SearchBar(props) {
           onChange={onSelect}
           options={result}
           sx={{ width: 300 }}
-          renderInput={(params) => <TextField error={!!error}  onInput={handleInputChange} {...params} label="Pieces" />}
+          renderInput={(params) => <TextField error={!!error}  onInput={handleInputChange} {...params} label="Search..." />}
         />
         
           // <TextField 
