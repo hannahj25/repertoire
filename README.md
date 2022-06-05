@@ -19,6 +19,9 @@
 Repertoire is an online platform which allows users to search through a database of classical composers and works, and compile works into their own lists.
 
 ## Link
+Link to deployed page:
+
+https://your-repertoire.herokuapp.com/
 
 ## Technologies
 - Node
